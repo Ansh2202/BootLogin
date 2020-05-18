@@ -5,17 +5,20 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
-@Entity(name="users")
+@Entity
+@Table(name="users")
 public class UserEntity implements Serializable {
 
 	private static final long serialVersionUID = 999861692305194974L;
 	
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long id;
 	
 	
